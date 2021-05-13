@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/botxweb.git/static/css/main.494dc486.chunk.css",
+    "main.js": "/botxweb.git/static/js/main.add4bddf.chunk.js",
+    "main.js.map": "/botxweb.git/static/js/main.add4bddf.chunk.js.map",
+    "runtime-main.js": "/botxweb.git/static/js/runtime-main.0c82762d.js",
+    "runtime-main.js.map": "/botxweb.git/static/js/runtime-main.0c82762d.js.map",
+    "static/js/2.59f32756.chunk.js": "/botxweb.git/static/js/2.59f32756.chunk.js",
+    "static/js/2.59f32756.chunk.js.map": "/botxweb.git/static/js/2.59f32756.chunk.js.map",
+    "index.html": "/botxweb.git/index.html",
+    "static/css/main.494dc486.chunk.css.map": "/botxweb.git/static/css/main.494dc486.chunk.css.map",
+    "static/js/2.59f32756.chunk.js.LICENSE.txt": "/botxweb.git/static/js/2.59f32756.chunk.js.LICENSE.txt",
+    "static/media/botx.cbd79106.png": "/botxweb.git/static/media/botx.cbd79106.png",
+    "static/media/logo.9b79ddb6.svg": "/botxweb.git/static/media/logo.9b79ddb6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0c82762d.js",
+    "static/js/2.59f32756.chunk.js",
+    "static/css/main.494dc486.chunk.css",
+    "static/js/main.add4bddf.chunk.js"
+  ]
+}
