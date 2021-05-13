@@ -199,7 +199,8 @@
         flex-wrap: wrap;
   }
   footer {
-    padding: 50px 50px 50px 50px;
+    margin-top: 50px;
+    padding: 10px 180px 10px 180px;
     background-color: #fa9746;
     color: white;
     display: -webkit-box;

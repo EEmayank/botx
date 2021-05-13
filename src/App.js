@@ -1,10 +1,18 @@
 import img1 from './images/botx.png'
 import img2 from './images/logo.svg'
-import {useState} from 'react'
+import {useState, useRef, useEffect} from 'react'
+import {motion} from "framer-motion"
 function App() {
+  const getStyle = useRef();
   const [disp, setDisp] = useState({
-    display:"none"
+    display:""
   })
+
+  useEffect(()=>{
+    setDisp({
+      display:getStyle.current.style.display
+    })
+  },[])
 
   const handleClick = (val) => {
     if(!val) {
@@ -27,7 +35,7 @@ function App() {
           <div className="logo-container">
           <img src={img2} alt="logo" />
           </div>
-          <div className="menu-container" style={disp}>
+          <div className="menu-container" style={disp} ref={getStyle}>
             <div className="closeicon"  onClick={() => handleClick(1)} >
               <div className="bar1"></div>
               <div className="bar2"></div>
@@ -96,7 +104,7 @@ function App() {
         
       </div>
       <footer>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis voluptatum sint laborum velit reprehenderit voluptatem quibusdam quos deleniti earum consequuntur vitae laboriosam ipsa quidem, cupiditate quo praesentium. Repellat, perferendis asperiores.</p>
+          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis voluptatum sint laborum velit reprehenderit voluptatem </p>
       </footer>
       </div>
     </div>

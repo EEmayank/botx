@@ -1,3 +1,15 @@
+//color settings
+$content-padding:200px;
+$orange:#fa9746;
+$dark-orange:#e2883f;
+$font:#4b4b4b;
+$grey:#a9a9a9;
+
+//margin settings
+$margin-top: 50px 50px 0 50px;
+$margin-bottom: 0 50px 50px 50px;
+$margin-left:50px 0 50px 50px;
+$margin-right: 50px 50px 50px 0;
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
 //font settings
@@ -11,7 +23,27 @@ h1{
 p{
     font-size: 1.4rem;
 }
-
+.card{
+    width: 22vw;
+    background-color: white;
+    margin: 20px;
+    color: $orange;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    h1{
+        padding: 50px;
+        font-size: 1.5rem;
+    }
+    hr{
+        background-color: $orange;
+        border: none;
+        height: 2px;
+    }
+    h2{
+        font-size: 4.5rem;
+    }
+}
 .menuicon,.closeicon{
     display: none;
 }
@@ -22,22 +54,9 @@ p{
     height: 100vh;
 }
 
-//color settings
-$content-padding:200px;
-$orange:#fa9746;
-$dark-orange:#e2883f;
-$font:#4b4b4b;
-$grey:#a9a9a9;
-
-//margin settings
-$margin-top: 50px 50px 0 50px;
-$margin-bottom: 0 50px 50px 50px;
-$margin-left:50px 0 50px 50px;
-$margin-right: 50px 50px 50px 0;
 
 
 .card{
-    width: 300px;
     box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.39);
     -webkit-box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.39);
     -moz-box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.39);
@@ -92,7 +111,7 @@ nav {
         margin: $margin-left;
     }
     .right{
-        margin:$margin-left
+        margin:$margin-right;
     }
     h1{
         color: $orange;
@@ -127,6 +146,7 @@ nav {
 
     img{
         width: 40vw;
+        margin-right: 50px;
     }
 }
 
@@ -192,7 +212,8 @@ nav {
 }
 
 footer{
-    padding: 50px 180px 50px 180px;
+    margin-top: 50px;
+    padding: 10px 180px 10px 180px;
 
     background-color: $orange;
 
