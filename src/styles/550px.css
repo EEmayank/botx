@@ -13,6 +13,13 @@
   .body {
     height: 100vh;
   }
+  a {
+    color: white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: white;
+  }
   .card {
     box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.39);
     -webkit-box-shadow: 0px 0px 16px 1px rgba(0, 0, 0, 0.39);
@@ -172,7 +179,7 @@
     -webkit-transition-duration: 0.2s;
             transition-duration: 0.2s;
   }
-  .page1 button:hover {
+  .page1 button:target {
     background-color: #e2883f;
     -webkit-transform: scale(1.05);
             transform: scale(1.05);
@@ -270,6 +277,70 @@
         -ms-flex-align: center;
             align-items: center;
     text-align: center;
+  }
+  .login-container {
+    position: fixed;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .login-container .form-container {
+    border: 3px solid #fa9746;
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+  }
+  .login-container .form-container form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 50px;
+    font-weight: 500;
+  }
+  .login-container .form-container form .password {
+    padding-top: 30px;
+  }
+  .login-container .form-container form input {
+    border: 2px solid #fa9746;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  .login-container .form-container form button {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background-color: #fa9746;
+    color: white;
+    font-size: 1.05rem;
+    -webkit-transition-duration: 0.2s;
+            transition-duration: 0.2s;
+  }
+  .login-container .form-container form button:hover {
+    -webkit-transform: scale(1.05);
+            transform: scale(1.05);
+    background-color: #e2883f;
   }
 }
 /*# sourceMappingURL=550px.css.map */

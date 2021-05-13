@@ -1,113 +1,99 @@
-import img1 from './images/botx.png'
+
 import img2 from './images/logo.svg'
-import {useState, useRef, useEffect} from 'react'
-import {motion} from "framer-motion"
+import Home from './components/home'
+import Login from './components/login'
+import {useState, useRef, useLayoutEffect, useEffect} from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
 function App() {
   const getStyle = useRef();
   const [disp, setDisp] = useState({
-    display:""
+    display:"flex"
   })
+  const [scroll, setScroll] = useState({
+    position:"initial"
+  })
+  const [animated, setAnimated] = useState("")
 
-  useEffect(()=>{
-    setDisp({
-      display:getStyle.current.style.display
-    })
-  },[])
-
-  const handleClick = (val) => {
-    if(!val) {
-      setDisp({display:"flex"})
+  function handleResize () {
+    if(window.innerWidth > 550){
+      setDisp({display:"flex"});
     }
     else{
-      setDisp({display:"none"})
+      setDisp({display:"none"});
+    }
+  }
+  useEffect (()=> {
+    handleResize()
+    window.addEventListener("resize", handleResize)
+  },[])
+  
+
+
+  const handleClick = (open, from="notPhone") => {
+    if(window.innerWidth <=550){
+      if(open) {
+        setDisp({display:"flex"})
+        setScroll({overflowY:"hidden"});
+        setAnimated("animated")
+      }
+      else{
+        setDisp({display:"none"})
+        setScroll({overflowY:"scroll"});
+        setAnimated("")
+      }
     }
   }
   return (
-    <div className="body">
-      <div className="container">
-        
-        <nav>
-          <div className="menuicon" onClick={() => handleClick(0)}>
-            <div className="bar bartop"></div>
-            <div className="bar"></div>
-            <div className="bar barbottom"></div>
-          </div>
-          <div className="logo-container">
-          <img src={img2} alt="logo" />
-          </div>
-          <div className="menu-container" style={disp} ref={getStyle}>
-            <div className="closeicon"  onClick={() => handleClick(1)} >
-              <div className="bar1"></div>
-              <div className="bar2"></div>
+    <Router>
+        <div className="body"style={scroll}>
+        <div className="container" style={scroll}>
+          
+          <nav>
+            <div className="menuicon" onClick={() => handleClick(true,  "phone")}>
+              <div className="bar bartop"></div>
+              <div className="bar"></div>
+              <div className="bar barbottom"></div>
             </div>
-            <div className="home menu-item">
-              HOME
+            <div className="logo-container">
+            <img src={img2} alt="logo" />
             </div>
-            <div className="aboutUs menu-item">
-              ABOUT US
+            
+            <div className={`menu-container ${animated}`} ref={getStyle} style={disp}>
+              <div className="closeicon"  onClick={() => handleClick(false, "phone")} >
+                <div className="bar1"></div>
+                <div className="bar2"></div>
+              </div>
+              <div className="home menu-item">
+                <Link to="/" onClick={()=>handleClick(false)}>HOME</Link>
+              </div>
+              <div className="aboutUs menu-item">
+                <Link to="/about" onClick={()=>handleClick(false)}>ABOUT US</Link>
+              </div>
+              <div className="service menu-item">
+                <Link to="/services" onClick={()=>handleClick(false)}>SERVICES</Link>
+              </div>
+              <div className="service menu-item">
+                <Link to="/login" onClick={()=>handleClick(false)}>LOG IN</Link>
+              </div>
             </div>
-            <div className="service menu-item">
-              SERVICES
-            </div>
-          </div>
-        </nav>
-      <div className="page1">
-        <div className="left">
-          <h1>GENERAL EDUCATION PLATFORM</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam ducimus voluptatem itaque mollitia inventore, officia, nobis ratione perferendis modi praesentium consequuntur, quo necessitatibus doloribus harum maxime eos accusantium debitis adipisci!</p>
-          <button>GET STARTED</button>
-        </div>
-        <div className="right">
-          <img src={img1} alt="botx" />
+          </nav>
+          <Switch>
+            <Route path="/login">
+              <Login/>
+            </Route>
+            <Route path="/">
+              <Home/>
+            </Route>
+          </Switch>
         </div>
       </div>
-      <div className="page2">
-        <div className="top">
-          <h1>FOR STUDENTS</h1>
-          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi tempora consequuntur accusamus reprehenderit fugit voluptas repellat eaque, temporibus, libero fugiat maxime, ducimus in eveniet quis adipisci quibusdam nostrum pariatur! Ex.</p>
-        </div>
-        <div className="bottom">
-          <div className="card">
-            <h1>GRADE</h1>
-            <hr />
-            <h2>3-6</h2>
-          </div>
-          <div className="card">
-            <h1>GRADE</h1>
-            <hr />
-            <h2>7-10</h2>
-          </div>
-          <div className="card">
-            <h1>GRADE</h1>
-            <hr />
-            <h2>11-12</h2>
-          </div>
-        </div>
-      </div>
-      <div className="page3">
-        <div className="top">
-          <h1>FOR EDUCATOR</h1>
-          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus incidunt dolorem earum, deleniti modi rem ut alias expedita ipsam repellendus obcaecati odio perspiciatis ullam, voluptatibus facilis sequi itaque quae eligendi?</p>
-        </div>
-        <div className="bottom">
-          <div className="card">
-            <h1>ASPIRING STUDENTS</h1>
-            <hr />
-            <h1>THIS IS FOR THOSE COLLEGE STUDENTS WILLING TO GO BEYOND</h1>
-          </div>
-          <div className="card">
-            <h1>ASPIRING ENTHUSIASTIC</h1>
-            <hr />
-            <h1>THIS IS FOR THOSE COLLEGE STUDENTS WILLING TO GO BEYOND</h1>
-          </div>
-        </div>
-        
-      </div>
-      <footer>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Reiciendis voluptatum sint laborum velit reprehenderit voluptatem </p>
-      </footer>
-      </div>
-    </div>
+    </Router>
   );
 }
 
