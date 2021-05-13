@@ -1,0 +1,208 @@
+@media screen and (max-width:1024px) {
+
+    @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+//font settings
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+h1{
+    font-size: 2.5rem;
+}
+p{
+    font-size: 1.4rem;
+}
+
+//to prevent white bar at the bottom
+.body{
+    height: 100vh;
+}
+.menuicon,.closeicon{
+    display: none;
+}
+
+//color settings
+$content-padding:30px;
+$orange:#fa9746;
+$dark-orange:#e2883f;
+$font:#4b4b4b;
+$grey:#a9a9a9;
+
+//margin settings
+$margin-top: 50px 50px 0 50px;
+$margin-bottom: 0 50px 50px 50px;
+$margin-left:50px 0 50px 50px;
+$margin-right: 50px 50px 50px 0;
+
+
+.card{
+    width: 300px;
+    box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.39);
+    -webkit-box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.39);
+    -moz-box-shadow: 0px 0px 16px 1px rgba(0,0,0,0.39);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-left: 80px;
+    padding-right: 80px;
+
+    img{
+        height: 60px;
+        cursor: pointer;
+    }
+
+    .menu-container {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 50px 0 50px 50px;
+        width: 400px;
+        .menu-item {
+            cursor: pointer;
+            transition-duration: 0.2s;
+
+            font-weight: 900;
+            font-size: 1.3rem;
+
+            color:$grey;
+        }
+        .menu-item:hover {
+            transform: scale(1.05);
+        }
+    }
+
+}
+
+
+.page1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: row;
+
+    padding-left: $content-padding;
+    padding-right: $content-padding;
+    .left{
+        margin: $margin-left;
+    }
+    .right{
+        margin:$margin-left
+    }
+    h1{
+        color: $orange;
+    }
+    p{
+        color: $font;
+        margin: 30px 0 30px 0;
+    }
+
+    button{
+        background-color: $orange;
+
+        border: none;
+        border-radius: 8px;
+
+        width: 200px;
+        height: 60px;
+
+        color: white;
+        font-size: 1.1rem;
+
+        cursor: pointer;
+
+        transition-duration: 0.2s;
+
+        
+        &:hover{
+            background-color: $dark-orange;
+            transform: scale(1.05);
+        }
+    }
+
+    img{
+        width: 40vw;
+    }
+}
+
+.page2 {
+    margin: 100px 0 60px 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    
+    padding-left: $content-padding;
+    padding-right: $content-padding;
+
+    background-color: $orange;
+    color: white;
+
+    text-align: center;
+    .top{
+        padding:30px;
+    }
+    .bottom {
+        padding:30px;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+
+    }
+    
+}
+
+.page3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    flex-direction: column;
+
+    text-align: center;
+
+    padding-left: $content-padding;
+    padding-right: $content-padding;
+
+    .top{
+        h1{
+            color: $orange;
+        }
+        p{
+            color: $font;
+        }
+
+    }
+    .bottom{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        flex-wrap: wrap;
+    }
+}
+
+footer{
+    padding: 50px 180px 50px 180px;
+
+    background-color: $orange;
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+}
