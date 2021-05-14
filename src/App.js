@@ -2,6 +2,7 @@
 import img2 from './images/logo.svg'
 import Home from './components/home'
 import Login from './components/login'
+import NotFound from './components/404'
 import {useState, useRef, useLayoutEffect, useEffect} from 'react'
 import {
   BrowserRouter as Router,
@@ -70,7 +71,7 @@ function App() {
                 <div className="bar2"></div>
               </div>
               <div className="home menu-item">
-                <Link to="/" onClick={()=>handleClick(false)}>HOME</Link>
+                <Link  to="/" onClick={()=>handleClick(false)}>HOME</Link>
               </div>
               <div className="aboutUs menu-item">
                 <Link to="/about" onClick={()=>handleClick(false)}>ABOUT US</Link>
@@ -81,14 +82,18 @@ function App() {
               <div className="service menu-item">
                 <Link to="/login" onClick={()=>handleClick(false)}>LOG IN</Link>
               </div>
+      
             </div>
           </nav>
           <Switch>
             <Route path="/login">
               <Login/>
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Home/>
+            </Route>
+            <Route>
+              <NotFound />
             </Route>
           </Switch>
         </div>
